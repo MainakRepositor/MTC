@@ -34,18 +34,8 @@ with st.sidebar:
         st.subheader("Accurately indentifies mango breeds from the uploaded images")
 
              
-        
-def prediction_cls(prediction):
-    for key, clss in class_names.items():
-        if np.argmax(prediction)==clss:
-            
-            return key
-        
-       
 
-    
-
-st.set_option('deprecation.showfileUploaderEncoding', False)
+   
 @st.cache(allow_output_mutation=True)
 def load_model():
     model=tf.keras.models.load_model('mango_type.h5')
